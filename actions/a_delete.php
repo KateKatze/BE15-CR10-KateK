@@ -9,13 +9,13 @@ if ($_POST) {
     $sql = "DELETE FROM books WHERE bookID = {$id}";
     if (mysqli_query($connect, $sql) === true) {
         $class = "success";
-        $message = "Successfully Deleted! <br/> You will be redirected in 3 second.";
+        $message = "The book has been successfully deleted! <br/> You will be redirected to the startpage in 5 seconds.";
     } else {
         $class = "danger";
-        $message = "An error occured: <br>" . $connect->error . "<br/> You will be redirected in 3 second.";
+        $message = "An error occured: <br>" . $connect->error . "<br/> You will be redirected in 3 seconds.";
     }
     mysqli_close($connect);
-    header("refresh: 3; url= ../index.php");
+    header("refresh: 5; url= ../index.php");
 } else {
     header("location: ../error.php");
 }
@@ -31,7 +31,7 @@ if ($_POST) {
     <body>
         <div class="container">
             <div class="mt-3 mb-3">
-                <h1>Delete request response</h1>
+                <h1 class="mt-5 mb-5">Delete book info</h1>
             </div>
             <div class="alert alert-<?= $class;?>" role="alert">
                 <p><?= $message;?></p>

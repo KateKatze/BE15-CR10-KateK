@@ -46,14 +46,14 @@ if ($_GET['bookID']) {
                 width: 70% ;
             }     
             .img-thumbnail{
-                width: 70px !important;
-                height: 100px !important;
+                width: 4vw !important;
+                height: 11vh !important;
             }    
         </style>
     </head>
     <body>
         <fieldset>
-            <legend class='h2 mb-3'>Delete the book info: <img class='img-thumbnail rounded ms-5' src='pictures/<?= $picture ?>' alt="<?= $name ?>"></legend>
+            <legend class='h2 mb-3'>Delete book and all the info<img class='img-thumbnail rounded ms-5' src='pictures/<?= $picture ?>' alt="<?= $name ?>"></legend>
             <h5>You have selected the data below:</h5>
             <table class='table table-striped'>
             <thead class='table-secondary'>
@@ -84,7 +84,7 @@ if ($_GET['bookID']) {
                 </tr>
             </table>
 
-            <h3 class="mb-4">Do you really want to delete this book and all the info?</h3>
+            <h3 class="mb-4 mt-5">Do you really want to delete it?</h3>
             <form action ="actions/a_delete.php" method="post">
                 <input type="hidden" name="id" value="<?= $id ?>" />
                 <input type="hidden" name="picture" value="<?= $picture ?>" />

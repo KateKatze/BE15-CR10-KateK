@@ -22,8 +22,24 @@ if ($_POST) {
 
     if (mysqli_query($connect, $sql) === true) {
         $class = "success";
-        $message = "The entry below was successfully created <br>
-            <table class='table w-50'><tr>
+        $message = "The entry below was successfully created: <br>
+            <table class='table table-bordered'>
+            <thead>
+            <tr>
+            <th class='h5'>Title</th>
+            <th class='h5'>ISBN</th>
+            <th class='h5'>Short description</th>
+            <th class='h5'>Book Type</th>
+            <th class='h5'>Author Surname</th>
+            <th class='h5'>Author Name</th>
+            <th class='h5'>Publisher</th>
+            <th class='h5'>Publisher address</th>
+            <th class='h5'>Publish date</th>
+            <th class='h5'>Book Status</th>
+            </tr>
+            </thead>
+            <hr>
+            <tr>
             <td> $name </td>
             <td> $isbn </td>
             <td> $desc </td>
@@ -37,7 +53,7 @@ if ($_POST) {
             </tr>
             </table>
             <hr>
-            <br/> You will be redirected in 3 seconds.";
+            <br/> You will be automatically redirected to the startpage in 5 seconds.";
         $uploadError = ($picture->error !=0)? $picture->ErrorMessage :'';
     } else {
         $class = "danger";
@@ -45,6 +61,7 @@ if ($_POST) {
         $uploadError = ($picture->error !=0)? $picture->ErrorMessage :'';
     }
     mysqli_close($connect);
+    header("refresh: 5; url = ../index.php");
 } else {
     header("location: ../error.php");
 }
@@ -60,12 +77,12 @@ if ($_POST) {
     <body>
         <div class="container">
             <div class="mt-3 mb-3">
-                <h1>Create request response</h1>
+                <h1 class="mt-5 mb-5">Create book info</h1>
             </div>
             <div class="alert alert-<?=$class;?>" role="alert">
                 <p><?php echo ($message) ?? ''; ?></p>
                 <p><?php echo ($uploadError) ?? ''; ?></p>
-                <a href='../index.php'><button class="btn btn-primary" type='button'>Home</button></a>
+                <a href='../index.php'><button class="btn btn-success" type='button'>Home</button></a>
             </div>
         </div>
     </body>

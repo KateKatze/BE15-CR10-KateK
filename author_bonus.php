@@ -43,8 +43,8 @@ if ($_GET['author_last_name']) {
                 margin: auto;
             }
             .img-thumbnail {
-                width: 70px !important;
-                height: 70px !important;
+                width: 4vw !important;
+                height: 11vh !important;
             }
             td {          
                 text-align: center;
@@ -57,7 +57,7 @@ if ($_GET['author_last_name']) {
     </head>
     <body>
         <div class="manageProduct w-75 mt-3">    
-            <table class='table table-striped'>
+            <table class='table table-striped mt-5'>
                 <thead class='table-secondary'>
                     <tr>
                         <th class='h5'>Picture</th>

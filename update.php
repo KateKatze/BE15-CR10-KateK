@@ -39,8 +39,8 @@ if ($_GET['bookID']) {
                 width: 60% ;
             }  
             .img-thumbnail{
-                width: 70px !important;
-                height: 100px !important;
+                width: 4vw !important;
+                height: 11vh !important;
             }     
         </style>
     </head>

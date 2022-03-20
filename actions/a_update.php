@@ -6,7 +6,6 @@ require_once 'file_upload.php';
 
 if ($_POST) {  
     $id = $_POST['id'];
-    echo $id;
     $picture = file_upload($_FILES['picture']); 
     $name = $_POST['title'];
     $isbn = $_POST['isbn'];
@@ -28,14 +27,15 @@ if ($_POST) {
     }   
     if (mysqli_query($connect, $sql) === TRUE) {
         $class = "success";
-        $message = "The record was successfully updated";
+        $message = "The book info has been successfully updated. You will be automatically redirected to the startpage in 5 seconds.";
         $uploadError = ($picture->error !=0)? $picture->ErrorMessage :'';
     } else {
         $class = "danger";
-        $message = "Error while updating record : <br>" . mysqli_connect_error();
+        $message = "Error while updating record: <br>" . mysqli_connect_error();
         $uploadError = ($picture->error !=0)? $picture->ErrorMessage :'';
     }
-    mysqli_close($connect);    
+    mysqli_close($connect); 
+    header("refresh: 5; url = ../index.php");   
 } else {
     header("location: ../error.php");
 }
@@ -51,7 +51,7 @@ if ($_POST) {
     <body>
         <div class="container">
             <div class="mt-3 mb-3">
-                <h1>Update request response</h1>
+                <h1 class="mt-5 mb-5">Update book info</h1>
             </div>
             <div class="alert alert-<?= $class;?>" role="alert">
                 <p><?= ($message) ?? ''; ?></p>

@@ -13,15 +13,15 @@
                 <td>" .$row['ISBN']."</td>
                 <td>" .$row['short_description']."</td>
                 <td>" .$row['book_type']."</td>
-                <td>" .$row['author_last_name']." <a href='author_bonus.php?author_last_name=".$row['author_last_name']."'><button class='btn btn-primary btn-sm mb-2' type='button'>More books from this author</button></a></td>
+                <td>" .$row['author_last_name']." <a href='author_bonus.php?author_last_name=".$row['author_last_name']."'><button class='btn btn-primary btn-sm p-1 mt-2' type='button'><span style='font-size:x-small;'>Author´s books</span></button></a></td>
                 <td>" .$row['author_first_name']."</td>
                 <td>" .$row['publisher_name']."</td>
                 <td>" .$row['publisher_address']."</td>
                 <td>" .$row['publish_date']."</td>
                 <td>" .$row['book_status']."</td>
-                <td><a href='details.php?bookID=".$row['bookID']."'><button class='btn btn-primary btn-sm mb-2' type='button'>Show media</button></a>
-                <a href='update.php?bookID=".$row['bookID']."'><button class='btn btn-warning btn-sm ps-3 pe-3 mb-2' type='button'>Edit</button></a>
-                <a href='delete.php?bookID=".$row['bookID']."'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
+                <td><a href='details.php?bookID=".$row['bookID']."'><button class='btn btn-primary btn-sm w-100 mb-2' type='button'>Info</button></a>
+                <a href='update.php?bookID=".$row['bookID']."'><button class='btn btn-warning btn-sm w-100 mb-2' type='button'>Edit</button></a>
+                <a href='delete.php?bookID=".$row['bookID']."'><button class='btn btn-danger btn-sm w-100' type='button'>Delete</button></a></td>
                 </tr>";
         }
     }
@@ -44,8 +44,8 @@
                 margin: auto;
             }
             .img-thumbnail {
-                width: 70px !important;
-                height: 100px !important;
+                width: 4vw !important;
+                height: 11vh !important;
             }
             td {          
                 text-align: center;

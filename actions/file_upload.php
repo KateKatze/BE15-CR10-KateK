@@ -11,7 +11,7 @@ function file_upload($picture){
     $fileExtension = strtolower(pathinfo($fileName,PATHINFO_EXTENSION));
     $filesAllowed = ["png", "jpg", "jpeg"];
     if ($fileError == 4) {
-        $result->ErrorMessage = "No picture was chosen. It can always be updated later.";
+        $result->ErrorMessage = "No picture has been added. You can always change it later.";
         return $result;
     } else {
         if (in_array($fileExtension, $filesAllowed)) {
@@ -28,7 +28,7 @@ function file_upload($picture){
                         return $result;
                     }
                 } else {                                      
-                    $result->ErrorMessage = "This picture is bigger than the allowed 500Kb. <br> Please choose a smaller one and update the product.";
+                    $result->ErrorMessage = "This picture is bigger than the allowed 500Kb. <br> Please choose a smaller one and update the info.";
                     return $result;
                 }
             } else {                              
